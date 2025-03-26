@@ -10,6 +10,17 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const path = require("path");
+
+// Serve static files from React's dist folder
+app.use(express.static(path.join(__dirname, "build")));  
+
+// Catch-all route to serve React's index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+
 mongoose.connect(process.env.DATABASE_URL);
 const database = mongoose.connection;
 database.on('error', (err) => { 
