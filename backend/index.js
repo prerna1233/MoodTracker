@@ -37,9 +37,11 @@ app.listen(PORT,() =>{
     console.log(`🚀 Server is running on port ${PORT}`)
 })
 
-app.use('/' , (req, res) => {
+app.use('/', (req, res) => {
   console.log("API is working");
-}
+  res.send("API is working");  // Add this line to avoid hanging requests
+});
+
 
 
 
