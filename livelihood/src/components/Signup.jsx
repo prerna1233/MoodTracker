@@ -22,9 +22,7 @@ const Signup = () => {
       navigate("/login"); // Redirect to login page after successful signup
 
     } catch (error) {
-      catch (error) {
   alert((error.response && error.response.data.message) || "Signup failed");
-}
     }
   };
 
