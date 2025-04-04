@@ -1,4 +1,9 @@
-/* Signup Page Styles */
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}/* Signup Page Styles */
 .signup-container {
   display: flex;
   justify-content: center;
