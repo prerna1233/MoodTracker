@@ -22,8 +22,9 @@ const Signup = () => {
       navigate("/login"); // Redirect to login page after successful signup
 
     } catch (error) {
-      console.error("Signup Error:", error.response?.data || error.message);
-      alert(error.response?.data?.message || "Signup Failed! Please try again.");
+      catch (error) {
+  alert((error.response && error.response.data.message) || "Signup failed");
+}
     }
   };
 
