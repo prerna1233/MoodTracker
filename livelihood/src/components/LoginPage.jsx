@@ -22,7 +22,7 @@ const LoginPage = () => {
       if (response.data.token) { 
         localStorage.setItem("token", response.data.token);
         navigate("/mainpage");
-        window.location.reload(); // ✅ Forces app to recheck authentication state
+        window.location.reload(); 
       } else {
         alert("Invalid login response. No token received.");
       }
