@@ -1,14 +1,15 @@
-
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}/* Signup Page Styles */
+body{
+  display:flex;
+   justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width : 100vw;
   background: linear-gradient(135deg, #d0e8ff, #a2d2ff);
 }
 
