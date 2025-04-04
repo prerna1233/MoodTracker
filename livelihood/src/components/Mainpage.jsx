@@ -1,20 +1,3 @@
-// import React from "react";
-
-// const Mainpage = () => {
-//   return (
-//     <div>
-//       <h1>Welcome to the Main Page!</h1>
-//     </div>
-//   );
-// };
-
-// export default Mainpage;
-
-
-
-
-
-
 
 
 import React, { useState, useEffect } from "react";
