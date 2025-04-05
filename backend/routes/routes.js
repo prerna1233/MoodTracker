@@ -14,7 +14,6 @@ router.post('/signup', async (req, res) => {
             return res.status(400).json({ message: "All fields are required" });
         }
 
-        // ✅ Always hash password before saving
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const user = new Model({
@@ -42,28 +41,28 @@ router.post('/login', async (req, res) => {
 
         const user = await Model.findOne({ email });
         if (!user) {
-            console.log("❌ User not found!");
+            console.log(" User not found!");
             return res.status(400).json({ message: "User not found" });
         }
 
-        console.log("✅ User Found:", user);
+        console.log(" User Found:", user);
 
-        // ✅ Compare input password with hashed password in DB
+    
         const match = await bcrypt.compare(password, user.password);
         console.log("🔍 Comparing Passwords...");
 
         if (!match) {
-            console.log("❌ Wrong Password!");
+            console.log(" Wrong Password!");
             return res.status(400).json({ message: "Wrong Password" });
         }
 
         const token = jwt.sign({ id: user._id }, "12345", { expiresIn: "1h" });
-        console.log("✅ Login Successful. Token:", token);
+        console.log("Login Successful. Token:", token);
 
         res.json({ message: "Login Successful!", token });
 
     } catch (error) {
-        console.error("❌ Login Error:", error);
+        console.error(" Login Error:", error);
         res.status(500).json({ message: "Internal Server Error" });
     }
 });
