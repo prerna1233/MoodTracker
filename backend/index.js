@@ -12,7 +12,6 @@ app.use(cors());
 
 const path = require("path");
 
-// Serve static files from React's dist folder
 app.use(express.static(path.join(__dirname, "build")));  
 
 // Catch-all route to serve React's index.html
@@ -39,7 +38,7 @@ app.listen(PORT,() =>{
 
 app.use('/', (req, res) => {
   console.log("API is working");
-  res.send("API is working");  // Add this line to avoid hanging requests
+  res.send("API is working");  
 });
 
 
